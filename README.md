@@ -11,7 +11,7 @@ Praktikum Modul 4 Jaringan Komputer 2023
 
 ## Subnetting
 
-https://github.com/katarinainezita/school-management-system/assets/109232320/8dbda3e4-a145-42df-b48c-83b22c159c21
+![image](https://github.com/katarinainezita/school-management-system/assets/109232320/8dbda3e4-a145-42df-b48c-83b22c159c21)
 
 | Nama Subnet  | Rute                                  | Jumlah IP    | Netmask |
 |------------- |------------                           |--------------| --------| 
