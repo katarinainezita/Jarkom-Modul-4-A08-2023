@@ -9,6 +9,9 @@ Praktikum Modul 4 Jaringan Komputer 2023
 | 2    | Katarina Inezita Prambudi         | 5025211148   |
 
 
+## Pembagian
+Untuk praktikum kali ini, kelompok kami memutuskan untuk memilih kombinasi metode VLSM pada GNS3 dan metode CIDR pada Cisco Packet Tracer (CPT).
+
 ## Subnetting
 
 ![image](https://github.com/katarinainezita/school-management-system/assets/109232320/8dbda3e4-a145-42df-b48c-83b22c159c21)
@@ -40,8 +43,6 @@ Praktikum Modul 4 Jaringan Komputer 2023
 
 
 ## VLSM
-
-### GNS 3 Topologi
 
 
 ### Tree VLSM
@@ -438,7 +439,110 @@ iface eth0 inet static
 ```
 
 ### Routing VLSM
+Routing pada GNS dilakukan menggunakan script routing yang nantinya akan ditaruh ke dalam file .bashrc agar dapat dieksekusi setiap kali node dinyalakan.
+#### Aura
+```
+#!/bin/bash
+#Frieren
+route add -net 10.3.0.8 netmask 255.255.255.252 gw 10.3.0.14
+route add -net 10.3.0.0 netmask 255.255.255.252 gw 10.3.0.14
+route add -net 10.3.0.4 netmask 255.255.255.252 gw 10.3.0.14
+route add -net 10.3.24.0 netmask 255.255.248.0 gw 10.3.0.14
+route add -net 10.3.8.0 netmask 255.255.255.252 gw 10.3.0.14
+route add -net 10.3.1.0 netmask 255.255.255.128 gw 10.3.0.14
+route add -net 10.3.0.56 netmask 255.255.255.248 gw 10.3.0.14
 
+#Eisen
+route add -net 10.3.0.40 netmask 255.255.255.248 gw 10.3.0.22
+route add -net 10.3.0.32 netmask 255.255.255.252 gw 10.3.0.22
+route add -net 10.3.0.28 netmask 255.255.255.252 gw 10.3.0.22
+route add -net 10.3.0.24 netmask 255.255.255.252 gw 10.3.0.22
+route add -net 10.3.4.0 netmask 255.255.254.0 gw 10.3.0.22
+route add -net 10.3.0.36 netmask 255.255.255.252 gw 10.3.0.22
+route add -net 10.3.0.128 netmask 255.255.255.192 gw 10.3.0.22
+route add -net 10.3.16.0 netmask 255.255.252.0 gw 10.3.0.22
+route add -net 10.3.12.0 netmask 255.255.252.0 gw 10.3.0.22
+route add -net 10.3.3.0 netmask 255.255.255.0 gw 10.3.0.22
+
+#Denken
+route add -net 10.3.2.0 netmask 255.255.255.0 gw 10.3.0.18
+```
+
+#### Frieren
+```
+#!/bin/bash
+#Flamme
+route add -net 10.3.0.0 netmask 255.255.255.252 gw 10.3.0.10
+route add -net 10.3.0.4 netmask 255.255.255.252 gw 10.3.0.10
+route add -net 10.3.24.0 netmask 255.255.248.0 gw 10.3.0.10
+route add -net 10.3.8.0 netmask 255.255.255.252 gw 10.3.0.10
+route add -net 10.3.0.56 netmask 255.255.255.248 gw 10.3.0.10
+```
+
+#### Flamme
+```
+#!/bin/bash
+#Fern
+route add -net 10.3.24.0 netmask 255.255.248.0 gw 10.3.0.2
+
+#Himmel
+route add -net 10.3.0.56 netmask 255.255.255.248 gw 10.3.0.6
+```
+
+#### Eisen
+```
+#!/bin/bash
+#Lugne
+route add -net 10.3.12.0 netmask 255.255.252.0 gw 10.3.0.30
+route add -net 10.3.3.0 netmask 255.255.255.0 gw 10.3.0.30
+
+#Linie
+route add -net 10.3.4.0 netmask 255.255.254.0 gw 10.3.0.34
+route add -net 10.3.0.36 netmask 255.255.255.252 gw 10.3.0.34
+route add -net 10.3.0.128 netmask 255.255.255.192 gw 10.3.0.34
+route add -net 10.3.16.0 netmask 255.255.252.0 gw 10.3.0.34
+```
+
+#### Linie
+```
+#!/bin/bash
+#Lawine
+route add -net 10.3.0.128 netmask 255.255.255.192 gw 10.3.0.38
+route add -net 10.3.16.0 netmask 255.255.252.0 gw 10.3.0.38
+```
+
+#### Lawine
+```
+#!/bin/bash
+#Heiter
+route add -net 10.3.16.0 netmask 255.255.252.0 gw 10.3.0.131
+```
+
+### Testing
+#### Sein - Richter
+<img width="486" alt="image" src="https://github.com/katarinainezita/Jarkom-Modul-4-A08-2023/assets/105977864/8717ac1b-8146-4d63-a8f0-edc389ea2875">
+
+
+#### GranzChannel - TurkRegion
+<img width="482" alt="image" src="https://github.com/katarinainezita/Jarkom-Modul-4-A08-2023/assets/105977864/228d43a3-c430-47e0-945a-e9f67e0b6e77">
+
+
+#### RiegelCanyon - Aura
+<img width="486" alt="image" src="https://github.com/katarinainezita/Jarkom-Modul-4-A08-2023/assets/105977864/b286fbc0-fc43-4c4b-8fe9-1679f124d87f">
+
+#### Fern - Linie
+<img width="483" alt="image" src="https://github.com/katarinainezita/Jarkom-Modul-4-A08-2023/assets/105977864/7f74b4bf-c70d-46fa-a817-6ce30bb59ae4">
+
+
+#### RoyalCapital - LaubHills
+<img width="478" alt="image" src="https://github.com/katarinainezita/Jarkom-Modul-4-A08-2023/assets/105977864/fc206097-1b8f-46f1-9681-659274ce7798">
+
+
+#### Heiter - Denken
+<img width="482" alt="image" src="https://github.com/katarinainezita/Jarkom-Modul-4-A08-2023/assets/105977864/261a6985-ce85-45e3-8f63-5c61e94d4f08">
+
+#### SchwerMountains - Lugner
+<img width="483" alt="image" src="https://github.com/katarinainezita/Jarkom-Modul-4-A08-2023/assets/105977864/b56093ee-d85b-49b5-8096-ecd35a4ad96b">
 
 ## CIDR
 
@@ -530,6 +634,7 @@ iface eth0 inet static
 ### IP Configuration
 
 ### Routing
+Routing pada CPT dilakukan secara langsung menggunakan GUI yang sudah disediakan. Namun, yang perlu diingat di CPT adalah menambahkan gateaway atau next hop di setiap router ke arah router sebelumnya agar setiap request yang diterima oleh router tersebut dapat diteruskan ke router sebelumnya. Sehingga nantinya setiap router akan saling terhubung dan dapat melakukan request dari manapun ke manapun
 
 ### Percobaan Ping IP
 
